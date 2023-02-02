@@ -51,7 +51,7 @@ function cashRegister(price, cash, cid) {
     let sum = 0
     while (diff <= value && diff >= currencies[i][1]) {
       sum += currencies[i][1];
-      diff -= value;
+      diff -= currencies[i][1];
     }
     change.push([name, sum]);
 
