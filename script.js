@@ -11,12 +11,14 @@ function cashRegister(price, cash, cid) {
   let totalCashInDrawer = cid.reduce((acc, curr) => acc + curr[1], 0);
 
   // calculates total change in the till
-
+  
   if (totalCashInDrawer < diff) {
     return {status: "INSUFFICIENT_FUNDS", change: []}
   } else if (totalCashInDrawer === diff) {
     return {status: "CLOSED", change: cid}
   }
+  /* checks if there is enough change in the till or if 
+  all of the till should be returned as change*/
 
   let currencies = [ 
   ["PENNY", 0.01],
@@ -33,20 +35,26 @@ function cashRegister(price, cash, cid) {
 
   for (let i = cid.length; i > 0; i--) {
     let currency = cid[i];
-    let name = currency[2];
+    let name = currency[0];
     let value = currency[1]
 
     if (diff >= value) {
       diff -= value;
       change.push(currency)
+      continue;
     }
+
+    let sum = 0
+    while (diff <= value && diff >= currencies[i]) {
+      sum += currencies[i][1];
+      diff -= value;
+    }
+    change.push([name, sum]);
 
 }
 
+return change;
 
-
-  /* checks if there is enough change in the till or if 
-  all of the till should be returned as change*/
 
 }
 
