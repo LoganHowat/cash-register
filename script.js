@@ -62,6 +62,8 @@ function cashRegister(price, cash, cid) {
 
 }
 
+
+
 // Example function call
 cashRegister(19.5, 20, [
   ["PENNY", 1.01],
