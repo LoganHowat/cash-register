@@ -53,6 +53,11 @@ function cashRegister(price, cash, cid) {
       sum += currencies[i][1];
       diff -= currencies[i][1];
     }
+
+    if (sum == 0) {
+      continue;
+    }
+
     change.push([name, sum]);
 
   }
@@ -62,7 +67,17 @@ function cashRegister(price, cash, cid) {
 
 }
 
-
+console.log(cashRegister(3.26, 100, [
+  ["PENNY", 1.01],
+  ["NICKEL", 2.05],
+  ["DIME", 3.1],
+  ["QUARTER", 4.25],
+  ["ONE", 90],
+  ["FIVE", 55],
+  ["TEN", 20],
+  ["TWENTY", 60],
+  ["ONE HUNDRED", 100]
+]))
 
 // Example function call
 console.log(cashRegister(19.5, 20, [
