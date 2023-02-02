@@ -31,9 +31,9 @@ function cashRegister(price, cash, cid) {
   ["TWENTY", 20],
   ["ONE HUNDRED", 100]]
 
-  let change = [];
+  let result = [];
 
-  for (let i = cid.length-1; i > 0; i--) {
+  for (let i = cid.length-1; i >= 0; i--) {
     let currency = cid[i];
     let name = currency[0];
     let value = currency[1]
@@ -44,7 +44,7 @@ function cashRegister(price, cash, cid) {
 
     if (diff >= value) {
       diff -= value;
-      change.push(currency)
+      result.push(currency)
       continue;
     }
 
@@ -58,11 +58,11 @@ function cashRegister(price, cash, cid) {
       continue;
     }
 
-    change.push([name, sum]);
+    result.push([name, sum]);
 
   }
 
-  return change;
+  return {status: "OPEN",change: result};
 
 
 }
@@ -80,14 +80,14 @@ console.log(cashRegister(3.26, 100, [
 ]))
 
 // Example function call
-console.log(cashRegister(19.5, 20, [
-  ["PENNY", 1.01],
-  ["NICKEL", 2.05],
-  ["DIME", 3.1],
-  ["QUARTER", 4.25],
-  ["ONE", 90],
-  ["FIVE", 55],
-  ["TEN", 20],
-  ["TWENTY", 60],
-  ["ONE HUNDRED", 100],
-]));
+// console.log(cashRegister(19.5, 20, [
+//   ["PENNY", 1.01],
+//   ["NICKEL", 2.05],
+//   ["DIME", 3.1],
+//   ["QUARTER", 4.25],
+//   ["ONE", 90],
+//   ["FIVE", 55],
+//   ["TEN", 20],
+//   ["TWENTY", 60],
+//   ["ONE HUNDRED", 100],
+// ]));
