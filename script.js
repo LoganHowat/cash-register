@@ -18,6 +18,33 @@ function cashRegister(price, cash, cid) {
     return {status: "CLOSED", change: cid}
   }
 
+  let currencies = [ 
+  ["PENNY", 0.01],
+  ["NICKEL", 0.05],
+  ["DIME", 0.1],
+  ["QUARTER", 0.25],
+  ["ONE", 1],
+  ["FIVE", 5],
+  ["TEN", 10],
+  ["TWENTY", 20],
+  ["ONE HUNDRED", 100]]
+
+  let change = [];
+
+  for (let i = cid.length; i > 0; i--) {
+    let currency = cid[i];
+    let name = currency[2];
+    let value = currency[1]
+
+    if (diff >= value) {
+      diff -= value;
+      change.push(currency)
+    }
+
+}
+
+
+
   /* checks if there is enough change in the till or if 
   all of the till should be returned as change*/
 
