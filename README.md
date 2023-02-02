@@ -1,4 +1,4 @@
-## GOAL: Implement a cash register function cashRegister that:
+## GOAL: Implement a cash register function cashRegister that: check
 
 ## Accepts purchase price as the first argument (price), payment as the second argument (cash), and cash-in-drawer (cid) as the third argument.
 
