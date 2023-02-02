@@ -33,7 +33,7 @@ function cashRegister(price, cash, cid) {
 
   let change = [];
 
-  for (let i = cid.length; i > 0; i--) {
+  for (let i = cid.length-1; i > 0; i--) {
     let currency = cid[i];
     let name = currency[0];
     let value = currency[1]
@@ -49,7 +49,7 @@ function cashRegister(price, cash, cid) {
     }
 
     let sum = 0
-    while (diff <= value && diff >= currencies[i]) {
+    while (diff <= value && diff >= currencies[i][1]) {
       sum += currencies[i][1];
       diff -= value;
     }
@@ -65,7 +65,7 @@ function cashRegister(price, cash, cid) {
 
 
 // Example function call
-cashRegister(19.5, 20, [
+console.log(cashRegister(19.5, 20, [
   ["PENNY", 1.01],
   ["NICKEL", 2.05],
   ["DIME", 3.1],
@@ -75,4 +75,4 @@ cashRegister(19.5, 20, [
   ["TEN", 20],
   ["TWENTY", 60],
   ["ONE HUNDRED", 100],
-]);
+]));
