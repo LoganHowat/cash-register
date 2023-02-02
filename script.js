@@ -62,6 +62,10 @@ function cashRegister(price, cash, cid) {
 
   }
 
+  if (diff > 0) {
+    return {status: "INSUFFICIENT_FUNDS", change: []};
+  }
+
   return {status: "OPEN",change: result};
 
 
