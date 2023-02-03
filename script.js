@@ -1,3 +1,6 @@
+
+let paragraph = document.querySelector("#result");
+
 const cid = [
   ["PENNY", 1.01],
   ["NICKEL", 2.05],
@@ -10,6 +13,8 @@ const cid = [
   ["ONE HUNDRED", 100]
 ];
 function cashRegister(price, cash, cid) {
+  let paragraph = document.querySelector("p");
+
   let diff = cash - price;
   // this is the change needed
 
@@ -26,6 +31,7 @@ function cashRegister(price, cash, cid) {
   if (totalCashInDrawer < diff) {
     return {status: "INSUFFICIENT_FUNDS", change: []}
   } else if (totalCashInDrawer === diff) {
+    paragraph.innerHTML = cid;
     return {status: "CLOSED", change: cid}
   }
   /* checks if there is enough change in the till or if 
@@ -81,27 +87,19 @@ function cashRegister(price, cash, cid) {
   }
 
   
-
+  paragraph.innerHTML = result;
   return {status: "OPEN",change: result};
 }
 
-let paragraph = document.querySelector("p");
+
 
 function displayChange(obj) {
+
+
   let change = obj.change;
-  let result = []
-
-  for (let i = 0; i < change.length; i++) {
-    result.push(change[i]);
-  }
-
-  return result;
+  
+  paragraph.innerHTML = JSON.stringify(change);
 }
 
-let price = document.querySelector("#price")
 
-let payment = document.querySelector("#payment")
 
-paragraph.innerHTML = displayChange(cashRegister(0.36, 100, cid))
-
-console.log(cashRegister(3.26, 100, cid))

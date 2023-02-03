@@ -9,6 +9,9 @@
   <body>
     <h1>Cash Register</h1>
 
+    <p id="result"></p>
+
+
     <form>
       <label for="price">Price:</label>
       <input type="text" id="price" name="price" />
@@ -18,15 +21,15 @@
       <label for="payment">Payment:</label>
       <input type="text" id="payment" name="payment" />
 
+      
       <button
-        type="button"
-        onclick="displayChange(cashRegister(price, payment, cid))"
+      type="button"
+      onclick="displayChange(cashRegister(document.getElementById('price').value, document.getElementById('payment').value, cid))"
       >
-        Calculate
+      Calculate
       </button>
     </form>
 
-    <p></p>
     <script src="script.js"></script>
   </body>
 </html>
