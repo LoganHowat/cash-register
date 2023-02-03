@@ -80,9 +80,28 @@ function cashRegister(price, cash, cid) {
     return {status: "INSUFFICIENT_FUNDS", change: []};
   }
 
+  
+
   return {status: "OPEN",change: result};
-
-
 }
+
+let paragraph = document.querySelector("p");
+
+function displayChange(obj) {
+  let change = obj.change;
+  let result = []
+
+  for (let i = 0; i < change.length; i++) {
+    result.push(change[i]);
+  }
+
+  return result;
+}
+
+let price = document.querySelector("#price")
+
+let payment = document.querySelector("#payment")
+
+paragraph.innerHTML = displayChange(cashRegister(0.36, 100, cid))
 
 console.log(cashRegister(3.26, 100, cid))
