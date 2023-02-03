@@ -93,7 +93,15 @@ function cashRegister(price, cash, cid) {
 
 function displayChange(obj) {
   let change = obj.change;
-  paragraph.innerHTML = JSON.stringify(change);
+  var tableBody = document.getElementById('tableBody');
+  
+  for (let i = 0; i < change.length; i++) {
+    var row = tableBody.insertRow();
+    var col1 = row.insertCell(0);
+    var col2 = row.insertCell(1);
+    col1.innerHTML = change[i][0];
+    col2.innerHTML = change[i][1];
+  };
 }
 
 
