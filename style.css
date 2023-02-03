@@ -1,0 +1,35 @@
+h1{
+    text-align: center;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+#OuterDiv{
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-self: center;
+    width: 50%;
+}
+
+#priceDiv{
+    float: left;
+}
+
+#paymentDiv{
+    float: right;
+}
+
+#priceLabel{
+    float: left;
+}
+
+button{
+    margin-left: auto;
+    margin-right: auto;
+    width: 20%;
+    height:10%;
+}

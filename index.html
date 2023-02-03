@@ -5,30 +5,38 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=<device-width>, initial-scale=1.0" />
     <title>Document</title>
+    <link rel="stylesheet" href="style.css">
   </head>
   <body>
     <h1>Cash Register</h1>
 
-    <p id="result"></p>
+    <main>
+      <form>
+        <div id="OuterDiv">
+          <div id="priceDiv">
+            <label for="price" id="priceLabel">Price:</label>
+            <input type="text" id="price" name="price" />
+          </div>
 
+          <div id="paymentDiv">
+            <label for="payment">Payment:</label>
+            <input type="text" id="payment" name="payment" />
+          </div>
+        </div>
+        <br>
+        <br>
 
-    <form>
-      <label for="price">Price:</label>
-      <input type="text" id="price" name="price" />
+        <button
+        type="button"
+        onclick="displayChange(cashRegister(document.getElementById('price').value, document.getElementById('payment').value, cid))"
+        >
+        Calculate
+        </button>
 
-      <br />
+      </form>
 
-      <label for="payment">Payment:</label>
-      <input type="text" id="payment" name="payment" />
-
-      
-      <button
-      type="button"
-      onclick="displayChange(cashRegister(document.getElementById('price').value, document.getElementById('payment').value, cid))"
-      >
-      Calculate
-      </button>
-    </form>
+      <p id="result"></p>
+    </main>
 
     <script src="script.js"></script>
   </body>

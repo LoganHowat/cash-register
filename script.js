@@ -13,8 +13,7 @@ const cid = [
   ["ONE HUNDRED", 100]
 ];
 function cashRegister(price, cash, cid) {
-  let paragraph = document.querySelector("p");
-
+  console.log(price,cash)
   let diff = cash - price;
   // this is the change needed
 
@@ -87,17 +86,13 @@ function cashRegister(price, cash, cid) {
   }
 
   
-  paragraph.innerHTML = result;
   return {status: "OPEN",change: result};
 }
 
 
 
 function displayChange(obj) {
-
-
   let change = obj.change;
-  
   paragraph.innerHTML = JSON.stringify(change);
 }
 
