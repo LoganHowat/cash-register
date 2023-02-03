@@ -44,7 +44,7 @@ function cashRegister(price, cash, cid) {
 
     if (diff >= value) {
       diff -= value;
-      result.push(currency)
+      result.unshift(currency)
       continue;
     }
 
