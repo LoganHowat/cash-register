@@ -33,3 +33,20 @@ button{
     width: 20%;
     height:10%;
 }
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+#myTable {
+    flex-direction: column;
+    border: solid 2px black;
+    margin-left: auto;
+    margin-right: auto;
+    border-collapse: collapse;
+}
+td, th {
+    border: solid 2px black;
+    padding: 5px;
+    text-align: left;
+}
