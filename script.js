@@ -61,7 +61,7 @@ function cashRegister(price, cash, cid) {
       continue;
     }
 
-    result.push([name, sum]);
+    result.unshift([name, sum]);
 
   }
 
