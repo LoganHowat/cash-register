@@ -1,70 +1,81 @@
 * {
-    font-family: 'VT323', monospace;
-    color: #272727;
+  font-family: "VT323", monospace;
+  color: #272727;
 }
 body {
-    text-align: center;
-    margin: 5% 10%;
-    border: solid 2px #272727;
-    border-radius: 10px;
-    box-shadow: 0 0 10px 5px grey;
-    background-color: #E6E6E6;
+  text-align: center;
+  margin: 5% 10%;
+  border: solid 2px #272727;
+  border-radius: 10px;
+  box-shadow: 0 0 10px 5px grey;
+  background-color: #e6e6e6;
 }
 main {
-    border-radius: 10px;
-    background-color: #18A999;
+  border-radius: 10px;
+  background-color: #18a999;
 }
-form{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-}
-
-#OuterDiv{
-    flex-direction: row;
-    justify-content: space-evenly;
-    align-self: center;
-    width: 50%;
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
 }
 
-#priceDiv{
-    float: left;
+#OuterDiv {
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-self: center;
+  width: 50%;
+  font-size: 18px;
 }
 
-#paymentDiv{
-    float: right;
+#priceDiv {
+  float: left;
 }
 
-button{
-    margin-left: auto;
-    margin-right: auto;
-    width: 20%;
-    height:10%;
-    font-size: 20px;
-    background-color: #5F5AA2;
-    color: #E6E6E6;
+#paymentDiv {
+  float: right;
+}
+
+button {
+  margin-left: auto;
+  margin-right: auto;
+  width: 25%;
+  height: 10%;
+  font-size: 20px;
+  background-color: #5f5aa2;
+  color: #e6e6e6;
 }
 body {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 #myTable {
-    flex-direction: column;
-    border: solid 2px #272727;
-    margin-left: auto;
-    margin-right: auto;
-    border-collapse: collapse;
+  flex-direction: column;
+  border: solid 2px #272727;
+  margin-left: auto;
+  margin-right: auto;
+  border-collapse: collapse;
 }
-td, th {
-    border: solid 2px #272727;
-    padding: 5px;
-    text-align: left;
+td,
+th {
+  border: solid 2px #272727;
+  padding: 5px;
+  text-align: left;
 }
 th {
-    background-color: #dddddd;
+  background-color: #dddddd;
 }
 
-
 tr:nth-child(even) {
-    background-color: #dddddd;
+  background-color: #dddddd;
+}
+
+@media screen and (max-width: 480px) {
+  #OuterDiv {
+    flex-direction: column;
+  }
+
+  button {
+    width: 30%;
+  }
 }
