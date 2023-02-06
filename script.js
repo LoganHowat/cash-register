@@ -66,9 +66,9 @@ function cashRegister(price, cash, cid) {
 
     let sum = 0
     while (diff <= value && diff >= currencies[i][1]) {
-      if (currencies[i][1] == 0.01){
-        diff = Math.round(diff * 100) / 100;
-      }
+
+      diff = Math.round(diff * 100) / 100;
+
       sum += currencies[i][1];
       diff -= currencies[i][1];
     }
@@ -80,6 +80,8 @@ function cashRegister(price, cash, cid) {
     result.unshift([name, sum]);
 
   }
+
+  console.log(diff)
 
   if (diff > 0) {
     return {status: "INSUFFICIENT_FUNDS", change: []};
