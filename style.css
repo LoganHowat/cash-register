@@ -1,14 +1,19 @@
 * {
     font-family: 'VT323', monospace;
+    color: #272727;
 }
 body {
     text-align: center;
     margin: 5% 10%;
-    border: solid 2px black;
+    border: solid 2px #272727;
     border-radius: 10px;
     box-shadow: 0 0 10px 5px grey;
+    background-color: #E6E6E6;
 }
-
+main {
+    border-radius: 10px;
+    background-color: #18A999;
+}
 form{
     display: flex;
     flex-direction: column;
@@ -30,15 +35,14 @@ form{
     float: right;
 }
 
-#priceLabel{
-    float: left;
-}
-
 button{
     margin-left: auto;
     margin-right: auto;
     width: 20%;
     height:10%;
+    font-size: 20px;
+    background-color: #5F5AA2;
+    color: #E6E6E6;
 }
 body {
     display: flex;
@@ -46,15 +50,18 @@ body {
 }
 #myTable {
     flex-direction: column;
-    border: solid 2px black;
+    border: solid 2px #272727;
     margin-left: auto;
     margin-right: auto;
     border-collapse: collapse;
 }
 td, th {
-    border: solid 2px black;
+    border: solid 2px #272727;
     padding: 5px;
     text-align: left;
+}
+th {
+    background-color: #dddddd;
 }
 
 
