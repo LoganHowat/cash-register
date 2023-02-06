@@ -1,6 +1,17 @@
 
 let paragraph = document.querySelector("#result");
 
+let currencies = [ 
+["PENNY", 0.01],
+["NICKEL", 0.05],
+["DIME", 0.1],
+["QUARTER", 0.25],
+["ONE", 1],
+["FIVE", 5],
+["TEN", 10],
+["TWENTY", 20],
+["ONE HUNDRED", 100]];
+
 const cid = [
   ["PENNY", 1.01],
   ["NICKEL", 2.05],
@@ -36,16 +47,6 @@ function cashRegister(price, cash, cid) {
   /* checks if there is enough change in the till or if 
   all of the till should be returned as change*/
 
-  let currencies = [ 
-  ["PENNY", 0.01],
-  ["NICKEL", 0.05],
-  ["DIME", 0.1],
-  ["QUARTER", 0.25],
-  ["ONE", 1],
-  ["FIVE", 5],
-  ["TEN", 10],
-  ["TWENTY", 20],
-  ["ONE HUNDRED", 100]]
 
   let result = [];
 
@@ -101,13 +102,26 @@ function displayChange(obj) {
   let status = obj.status
   var tillStatus = document.getElementById('tillStatus')
   tillStatus.innerHTML = status
+
+  let neededCurrencies = [];
+  let count = 0;
+  for (let i = 0; i < currencies.length; i ++) {
+    if (change[count][0] === currencies[i][0]) {
+      neededCurrencies.push(currencies[i][1]);
+      count ++;
+    }
+    // break loop once reaching change.length
+    if (neededCurrencies.length === change.length) break;
+  }
   
   for (let i = 0; i < change.length; i++) {
     var row = tableBody.insertRow();
     var col1 = row.insertCell(0);
     var col2 = row.insertCell(1);
+    var col3 = row.insertCell(2);
     col1.innerHTML = change[i][0];
     col2.innerHTML = change[i][1];
+    col3.innerHTML = change[i][1] / neededCurrencies[i];
   };
 
 }
