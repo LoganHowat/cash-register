@@ -56,3 +56,8 @@ td, th {
     padding: 5px;
     text-align: left;
 }
+
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
