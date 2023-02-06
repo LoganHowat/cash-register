@@ -1,11 +1,12 @@
 * {
     font-family: 'VT323', monospace;
 }
-main {
+body {
     text-align: center;
-}
-h1{
-    text-align: center;
+    margin: 5% 10%;
+    border: solid 2px black;
+    border-radius: 10px;
+    box-shadow: 0 0 10px 5px grey;
 }
 
 form{
@@ -42,7 +43,6 @@ button{
 body {
     display: flex;
     flex-direction: column;
-    justify-content: center;
 }
 #myTable {
     flex-direction: column;
